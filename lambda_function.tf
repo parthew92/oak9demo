@@ -21,6 +21,11 @@ EOF
 
 
 resource "aws_lambda_function" "Oak9SampleFunction" {
+  # oak9: aws_lambda_function.vpc_config is not configured
+  # oak9: aws_lambda_permission.action is not configured
+  # oak9: aws_lambda_permission.principal is not configured
+  # oak9: Principal is not configured
+  # oak9: CodeSha256 is not configured
    function_name = var.lambdaFunctionName
 
    # A S3 bucket, where we could deploy the builds
@@ -38,6 +43,9 @@ resource "aws_lambda_function" "Oak9SampleFunction" {
 
 
 resource "aws_lambda_permission" "apigw" {
+  # oak9: aws_lambda_function.role is not configured
+  # oak9: aws_lambda_function.vpc_config is not configured
+  # oak9: CodeSha256 is not configured
    statement_id  = "AllowAPIGatewayInvoke"
    action        = "lambda:InvokeFunction"
    function_name = aws_lambda_function.Oak9SampleFunction.function_name
