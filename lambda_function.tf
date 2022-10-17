@@ -21,6 +21,7 @@ EOF
 
 
 resource "aws_lambda_function" "Oak9SampleFunction" {
+   # oak9: lambda.function.dead_letter_config is not configured
    function_name = var.lambdaFunctionName
 
    # A S3 bucket, where we could deploy the builds
