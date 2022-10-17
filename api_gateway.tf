@@ -1,4 +1,5 @@
 resource "aws_api_gateway_rest_api" "Oak9SampleAPIGateway" {
+  # oak9: aws_api_gateway_rest_api.endpoint_configuration.types is undefined for the API
   name        = var.apiGatewayName
   description = "API Gateway invoking Oak9SampleFunction lambda function"
 }
