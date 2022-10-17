@@ -21,6 +21,7 @@ EOF
 
 
 resource "aws_lambda_function" "Oak9SampleFunction" {
+   # oak9: aws_lambda_function.memory_size is not configured
    function_name = var.lambdaFunctionName
 
    # A S3 bucket, where we could deploy the builds
@@ -34,6 +35,7 @@ resource "aws_lambda_function" "Oak9SampleFunction" {
    runtime = var.runtime
 
    role = aws_iam_role.lambda_exec_role.arn
+  # oak9: aws_lambda_function.role does not have a properly defined lambda role that allows publishing logs to CloudWatch
 }
 
 
