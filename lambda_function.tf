@@ -34,6 +34,7 @@ resource "aws_lambda_function" "Oak9SampleFunction" {
    runtime = var.runtime
 
    role = aws_iam_role.lambda_exec_role.arn
+  # oak9: aws_lambda_function.role does not have a properly defined lambda role that allows publishing logs to CloudWatch
 }
 
 
