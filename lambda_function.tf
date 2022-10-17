@@ -21,6 +21,11 @@ EOF
 
 
 resource "aws_lambda_function" "Oak9SampleFunction" {
+   # oak9: lambda.function.vpc_config is not configured
+   # oak9: lambda.function.reserved_concurrent_executions is not configured
+   # oak9: aws_lambda_function.kms_key_arn is not set to use customer managed keys for encryption
+   # oak9: Concurrency execution limit is not properly configured for this Lambda Function
+   # oak9: lambda.function.dead_letter_config is not configured
    function_name = var.lambdaFunctionName
 
    # A S3 bucket, where we could deploy the builds
